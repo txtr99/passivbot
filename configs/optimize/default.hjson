@@ -1,6 +1,6 @@
 {
   # pso options
-  iters: 10000
+  iters: 1000
   num_cpus: 4
   options: {"c1": 1.4962, "c2": 1.4962, "w": 0.7298}
   n_particles: 48
@@ -10,13 +10,13 @@
 
   metric: adjusted_daily_gain
 
-  minimum_bankruptcy_distance: 0.5
-  minimum_equity_balance_ratio: 0.5
+  minimum_bankruptcy_distance: 0.2
+  minimum_equity_balance_ratio: 0.2
   minimum_slice_adg: -0.1
-  hrs_stuck_max_long: 48.0
-  hrs_stuck_max_shrt: 48.0
-  hrs_stuck_avg_long: 10.0
-  hrs_stuck_avg_shrt: 10.0
+  hrs_stuck_max_long: 8.0
+  hrs_stuck_max_shrt: 8.0
+  hrs_stuck_avg_long: 1.0
+  hrs_stuck_avg_shrt: 1.0
   maximum_pa_closeness_mean_long: 0.03
   maximum_pa_closeness_mean_shrt: 0.03
 
@@ -24,7 +24,7 @@
   # otherwise sliding window days will be max([maximum_hrs_stuck / 24 * 2.1,
   #                                            maximum_hrs_stuck_same_side / 24 * 2.1,
   #                                            sliding_window_days])
-  sliding_window_days: 10.0
+  sliding_window_days: 0.0
 
   # for each completed slice, objective is multiplied by reward_multiplier_base**(z + 1)
   # where z is enumerator of slices
@@ -33,34 +33,34 @@
 
   # will override any starting configs' long/shrt enabled parameter
   do_long: true
-  do_shrt: false
+  do_shrt: true
 
   # if lower and upper bound are set to same value, it's treated as a fixed variable
   ranges:
   {
 
-    long£grid_span: [0.09, 0.4]
+    long£grid_span: [0.005, 0.015]
     long£pbr_limit: [0.2, 0.2]
     long£max_n_entry_orders: [10, 10]
     long£initial_qty_pct: [0.001, 0.1]
     long£eprice_pprice_diff: [0.002, 0.02]
     long£secondary_pbr_allocation: [0.5, 0.5]
     long£secondary_pprice_diff: [0.3, 0.5]
-    long£eprice_exp_base: [1.618034, 1.618034]
+    long£eprice_exp_base: [1.0, 2.0]
     long£min_markup: [0.0005, 0.005]
     long£markup_range: [0.004, 0.01]
-    long£n_close_orders: [7, 7]
+    long£n_close_orders: [3, 7]
 
-    shrt£grid_span: [0.03, 0.2]
-    shrt£pbr_limit: [0.5, 2.0]
+    shrt£grid_span: [0.005, 0.015]
+    shrt£pbr_limit: [0.2, 0.2]
     shrt£max_n_entry_orders: [10, 10]
     shrt£initial_qty_pct: [0.001, 0.1]
-    shrt£eprice_pprice_diff: [0.001, 0.01]
-    shrt£secondary_pbr_allocation: [0.0, 0.0]
-    shrt£secondary_pprice_diff: [0.21, 0.5]
-    shrt£eprice_exp_base: [1.618034, 1.618034]
+    shrt£eprice_pprice_diff: [0.002, 0.02]
+    shrt£secondary_pbr_allocation: [0.5, 0.5]
+    shrt£secondary_pprice_diff: [0.3, 0.5]
+    shrt£eprice_exp_base: [1.0, 2.0]
     shrt£min_markup: [0.0005, 0.005]
     shrt£markup_range: [0.004, 0.01]
-    shrt£n_close_orders: [7, 7]
+    shrt£n_close_orders: [3, 7]
   }
 }
