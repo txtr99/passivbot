@@ -1,0 +1,71 @@
+// so you do a 
+//  sudo apt install tmux tmuxp
+//  then copy and paste that session file above into a file named say "mysession.yaml"
+//  then simply run 
+//  tmuxp load mysession.yaml
+//  and it magically loads all the bot instances
+//  of course, you will need to edit it to reflect your current path
+
+// you can always return to it by issuing a 
+// tmux a
+// and after a restart you only have to run again 
+// tmuxp load mysession.yaml
+//  and everything will be again restored
+// its pretty convenient and fast
+
+// track them with https://github.com/hoeckxer/exchanges_dashboard
+
+session_name: passivbot
+windows:
+- window_name: BNB-SOL-ETC-XLM
+  layout: tiled
+  shell_command_before:
+    - cd ~/v5_master/passivbot
+  panes:
+    - shell_command:
+        - python3 passivbot.py binance_01 BNBUSDT configs/live/newone.json
+    - shell_command:
+        - python3 passivbot.py binance_01 SOLUSDT configs/live/newone.json
+    - shell_command:
+        - python3 passivbot.py binance_01 ETCUSDT configs/live/newone.json
+    - shell_command:
+        - python3 passivbot.py binance_01 XLMUSDT configs/live/newone.json
+- window_name: ADA-VET-DOT-ATOM
+  layout: tiled
+  shell_command_before:
+    - cd ~/v5_master/passivbot
+  panes:
+    - shell_command:
+        - python3 passivbot.py binance_01 ADAUSDT configs/live/newone.json
+    - shell_command:
+        - python3 passivbot.py binance_01 VETUSDT configs/live/newone.json
+    - shell_command:
+        - python3 passivbot.py binance_01 DOTUSDT configs/live/newone.json
+    - shell_command:
+        - python3 passivbot.py binance_01 ATOMUSDT configs/live/newone.json
+- window_name: HBAR-ALGO-AVAX-MATIC
+  layout: tiled
+  shell_command_before:
+    - cd ~/v5_master/passivbot
+  panes:
+    - shell_command:
+        - python3 passivbot.py binance_01 HBARUSDT configs/live/newone.json
+    - shell_command:
+        - python3 passivbot.py binance_01 ALGOUSDT configs/live/newone.json
+    - shell_command:
+        - python3 passivbot.py binance_01 AVAXUSDT configs/live/newone.json
+    - shell_command:
+        - python3 passivbot.py binance_01 MATICUSDT configs/live/newone.json
+- window_name: BCH-UNI-ETH-LTC
+  layout: tiled
+  shell_command_before:
+    - cd ~/v5_master/passivbot
+  panes:
+    - shell_command:
+        - python3 passivbot.py binance_01 BCHUSDT configs/live/newone.json
+    - shell_command:
+        - python3 passivbot.py binance_01 UNIUSDT configs/live/newone.json
+    - shell_command:
+        - python3 passivbot.py binance_01 ETHUSDT configs/live/newone.json
+    - shell_command:
+        - python3 passivbot.py binance_01 LTCUSDT configs/live/newone.json
