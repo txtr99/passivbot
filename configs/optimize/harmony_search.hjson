@@ -5,9 +5,9 @@
   bandwidth: 0.07
   pitch_adjusting_rate: 0.24
 
-  n_cpus: 4
-  iters: 2000
-  cache_ticks: false  # set to true to keep all ticks in RAM
+  n_cpus: 46
+  iters: 50000
+  cache_ticks: true  # set to true to keep all ticks in RAM
 
   # score formula choices: [adg_pad_mean, adg_pad_std, adg_DGstd_ratio]
   score_formula: adg_pad_std
@@ -27,72 +27,72 @@
 
   # will override any starting configs' long/short enabled parameter
   do_long: true
-  do_short: false
+  do_short: true
 
   # symbols with min notional < $5 @ 2022-01-22,
   # and at least 250 days of data,
   # sorted highest to lowest vol last 250 days
-  symbols: ["ETHUSDT", "XRPUSDT", "1000SHIBUSDT", "DOGEUSDT", "ADAUSDT",
-            "BNBUSDT", "MATICUSDT", "DOTUSDT", "SANDUSDT", "FTMUSDT",
-            "LTCUSDT", "LINKUSDT", "MANAUSDT", "ETCUSDT", "EOSUSDT",
-            "ATOMUSDT", "FILUSDT", "ICPUSDT", "ALICEUSDT", "LRCUSDT",
-            "BCHUSDT", "SUSHIUSDT", "XTZUSDT", "THETAUSDT", "CRVUSDT",
-            "ALGOUSDT", "CHZUSDT", "TRXUSDT", "VETUSDT", "CHRUSDT",
-            "ONEUSDT", "OMGUSDT", "XLMUSDT", "RUNEUSDT", "ENJUSDT",
-            "CELRUSDT", "SXPUSDT", "1INCHUSDT", "SRMUSDT", "COTIUSDT",
-            "ZECUSDT", "QTUMUSDT", "GRTUSDT", "DENTUSDT", "SFPUSDT",
-            "STORJUSDT", "IOTAUSDT", "HOTUSDT", "NEOUSDT", "COMPUSDT",
-            "LINAUSDT", "KAVAUSDT", "BATUSDT", "WAVESUSDT", "IOSTUSDT",
-            "ALPHAUSDT", "RLCUSDT", "HBARUSDT", "DODOUSDT", "XMRUSDT",
-            "SNXUSDT", "ANKRUSDT", "DASHUSDT", "REEFUSDT", "ZENUSDT",
-            "CVCUSDT", "RENUSDT", "ICXUSDT", "RSRUSDT", "SKLUSDT",
-            "NKNUSDT", "BELUSDT", "ONTUSDT", "OGNUSDT", "BLZUSDT",
-            "MTLUSDT", "CTKUSDT", "RVNUSDT", "LITUSDT", "MKRUSDT",
-            "OCEANUSDT", "ZILUSDT", "UNFIUSDT", "BANDUSDT", "YFIIUSDT",
-            "TOMOUSDT", "TRBUSDT", "KNCUSDT", "STMXUSDT", "ZRXUSDT",
-            "SCUSDT", "AKROUSDT", "XEMUSDT", "FLMUSDT", "BALUSDT",
-            "BTSUSDT", "DGBUSDT", "DEFIUSDT",]
-
+  #symbols: ["ETHUSDT", "XRPUSDT", "1000SHIBUSDT", "DOGEUSDT", "ADAUSDT",
+  #          "BNBUSDT", "MATICUSDT", "DOTUSDT", "SANDUSDT", "FTMUSDT",
+  #          "LTCUSDT", "LINKUSDT", "MANAUSDT", "ETCUSDT", "EOSUSDT",
+  #          "ATOMUSDT", "FILUSDT", "ICPUSDT", "ALICEUSDT", "LRCUSDT",
+  #          "BCHUSDT", "SUSHIUSDT", "XTZUSDT", "THETAUSDT", "CRVUSDT",
+  #          "ALGOUSDT", "CHZUSDT", "TRXUSDT", "VETUSDT", "CHRUSDT",
+  #          "ONEUSDT", "OMGUSDT", "XLMUSDT", "RUNEUSDT", "ENJUSDT",
+  #          "CELRUSDT", "SXPUSDT", "1INCHUSDT", "SRMUSDT", "COTIUSDT",
+  #          "ZECUSDT", "QTUMUSDT", "GRTUSDT", "DENTUSDT", "SFPUSDT",
+  #          "STORJUSDT", "IOTAUSDT", "HOTUSDT", "NEOUSDT", "COMPUSDT",
+  #          "LINAUSDT", "KAVAUSDT", "BATUSDT", "WAVESUSDT", "IOSTUSDT",
+  #          "ALPHAUSDT", "RLCUSDT", "HBARUSDT", "DODOUSDT", "XMRUSDT",
+  #          "SNXUSDT", "ANKRUSDT", "DASHUSDT", "REEFUSDT", "ZENUSDT",
+  #          "CVCUSDT", "RENUSDT", "ICXUSDT", "RSRUSDT", "SKLUSDT",
+  #          "NKNUSDT", "BELUSDT", "ONTUSDT", "OGNUSDT", "BLZUSDT",
+  #          "MTLUSDT", "CTKUSDT", "RVNUSDT", "LITUSDT", "MKRUSDT",
+  #          "OCEANUSDT", "ZILUSDT", "UNFIUSDT", "BANDUSDT", "YFIIUSDT",
+  #          "TOMOUSDT", "TRBUSDT", "KNCUSDT", "STMXUSDT", "ZRXUSDT",
+  #          "SCUSDT", "AKROUSDT", "XEMUSDT", "FLMUSDT", "BALUSDT",
+  #          "BTSUSDT", "DGBUSDT", "DEFIUSDT",]
+  symbols: ["BTCUSDT"]
 
   bounds:
   {
     long:
     {
-      grid_span: [0.06, 0.65]
+      grid_span: [0.06, 0.30]
       ema_span_min: [360, 10080]
       ema_span_max: [360, 10080]
-      wallet_exposure_limit: [0.05, 0.05]
+      wallet_exposure_limit: [0.05, 0.25]
       max_n_entry_orders: [6, 15]
-      initial_qty_pct: [0.01, 0.04]
+      initial_qty_pct: [0.01, 0.08]
       initial_eprice_ema_dist: [-0.1, 0.05]
-      eprice_pprice_diff: [0.002, 0.02]
-      secondary_allocation: [0.0, 0.0]
-      secondary_pprice_diff: [0.05, 0.05]
+      eprice_pprice_diff: [0.0011, 0.0155]
+      secondary_allocation: [0.3, 0.5]
+      secondary_pprice_diff: [0.31, 0.40]
       eprice_exp_base: [1.0, 2.1]
-      min_markup: [0.006, 0.04]
-      markup_range: [0.006, 0.04]
+      min_markup: [0.0011, 0.0088]
+      markup_range: [0.003, 0.008]
       n_close_orders: [1, 12]
       auto_unstuck_wallet_exposure_threshold: [0.025, 0.25]
       auto_unstuck_ema_dist: [-0.01, 0.07]
   }
     short:
     {
-      grid_span: [0.06, 0.65]
+      grid_span: [0.06, 0.30]
       ema_span_min: [360, 10080]
       ema_span_max: [360, 10080]
-      wallet_exposure_limit: [0.05, 0.05]
+      wallet_exposure_limit: [0.05, 0.25]
       max_n_entry_orders: [6, 15]
-      initial_qty_pct: [0.01, 0.04]
+      initial_qty_pct: [0.01, 0.08]
       initial_eprice_ema_dist: [-0.1, 0.05]
-      eprice_pprice_diff: [0.002, 0.02]
-      secondary_allocation: [0.0, 0.0]
-      secondary_pprice_diff: [0.05, 0.05]
+      eprice_pprice_diff: [0.0011, 0.0155]
+      secondary_allocation: [0.3, 0.5]
+      secondary_pprice_diff: [0.31, 0.40]
       eprice_exp_base: [1.0, 2.1]
-      min_markup: [0.006, 0.04]
-      markup_range: [0.006, 0.04]
+      min_markup: [0.0011, 0.0088]
+      markup_range: [0.003, 0.008]
       n_close_orders: [1, 12]
       auto_unstuck_wallet_exposure_threshold: [0.025, 0.25]
       auto_unstuck_ema_dist: [-0.01, 0.07]
-  }
-  }
+}
+}
 }
