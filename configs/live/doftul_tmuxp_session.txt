@@ -1,3 +1,8 @@
+// 0.2 to 0.15 PBR
+// spread over 16 coins
+// symbols: ["BNBUSDT", "SOLUSDT", "ETCUSDT", "XLMUSDT", "ADAUSDT", "VETUSDT", "DOTUSDT", "ATOMUSDT", "HBARUSDT", "ALGOUSDT", "AVAXUSDT", "MATICUSDT",  "BCHUSDT", "UNIUSDT", "ETHUSDT", "LTCUSDT"]
+
+
 // so you do a 
 //  sudo apt install tmux tmuxp
 //  then copy and paste that session file above into a file named say "mysession.yaml"
