@@ -1,7 +1,7 @@
 {
   # pso options
-  iters: 50000
-  num_cpus: 30
+  iters: 1000
+  num_cpus: 46
   options: {"c1": 1.4962, "c2": 1.4962, "w": 0.7298}
   n_particles: 48
 
@@ -33,34 +33,34 @@
 
   # will override any starting configs' long/shrt enabled parameter
   do_long: true
-  do_shrt: true
+  do_short: false
 
   # if lower and upper bound are set to same value, it's treated as a fixed variable
   ranges:
   {
 
-    long£grid_span: [0.005, 0.015]
-    long£pbr_limit: [0.2, 0.2]
-    long£max_n_entry_orders: [10, 10]
-    long£initial_qty_pct: [0.001, 0.1]
+    long£grid_span: [0.07, 0.029]
+    long£pbr_limit: [0.3, 0.3]
+    long£max_n_entry_orders: [10, 100]
+    long£initial_qty_pct: [0.01, 0.04]
     long£eprice_pprice_diff: [0.002, 0.02]
-    long£secondary_pbr_allocation: [0.5, 0.5]
-    long£secondary_pprice_diff: [0.3, 0.5]
+    long£secondary_pbr_allocation: [0.3, 0.6]
+    long£secondary_pprice_diff: [0.25, 0.75]
     long£eprice_exp_base: [1.0, 2.0]
-    long£min_markup: [0.0005, 0.005]
+    long£min_markup: [0.001, 0.006]
     long£markup_range: [0.004, 0.01]
-    long£n_close_orders: [3, 7]
+    long£n_close_orders: [3, 12]
 
-    shrt£grid_span: [0.005, 0.015]
-    shrt£pbr_limit: [0.2, 0.2]
-    shrt£max_n_entry_orders: [10, 10]
-    shrt£initial_qty_pct: [0.001, 0.1]
+    shrt£grid_span: [0.07, 0.029]
+    shrt£pbr_limit: [0.3, 0.3]
+    shrt£max_n_entry_orders: [10, 100]
+    shrt£initial_qty_pct: [0.01, 0.04]
     shrt£eprice_pprice_diff: [0.002, 0.02]
-    shrt£secondary_pbr_allocation: [0.5, 0.5]
-    shrt£secondary_pprice_diff: [0.3, 0.5]
+    shrt£secondary_pbr_allocation: [0.3, 0.6]
+    shrt£secondary_pprice_diff: [0.25, 0.75]
     shrt£eprice_exp_base: [1.0, 2.0]
-    shrt£min_markup: [0.0005, 0.005]
+    shrt£min_markup: [0.001, 0.006]
     shrt£markup_range: [0.004, 0.01]
-    shrt£n_close_orders: [3, 7]
+    shrt£n_close_orders: [3, 12]
   }
 }
