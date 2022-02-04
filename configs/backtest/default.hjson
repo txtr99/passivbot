@@ -9,11 +9,11 @@
   latency_simulation_ms: 1000
 
   # specify starting balance in terms of margin token (i.e. usdt for usdt-m, coin for inverse coin-m)
-  starting_balance: 1000.0
+  starting_balance: 0.8
 
   # format YYYY-MM-DDTHH:mm:ss
   # e.g. 2022-01-01T01:01:01
-  start_date: 2022-02-02
+  start_date: 2022-01-01
   end_date: 2022-02-03
 
   # non default historical data path
