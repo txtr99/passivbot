@@ -6,7 +6,7 @@
   pitch_adjusting_rate: 0.24
 
   n_cpus: 46
-  iters: 50000
+  iters: 1000
   cache_ticks: true  # set to true to keep all ticks in RAM
 
   # score formula choices: [adg_pad_mean, adg_pad_std, adg_DGstd_ratio]
@@ -27,7 +27,7 @@
 
   # will override any starting configs' long/short enabled parameter
   do_long: true
-  do_short: true
+  do_short: false
 
   # symbols with min notional < $5 @ 2022-01-22,
   # and at least 250 days of data,
@@ -52,7 +52,7 @@
   #          "TOMOUSDT", "TRBUSDT", "KNCUSDT", "STMXUSDT", "ZRXUSDT",
   #          "SCUSDT", "AKROUSDT", "XEMUSDT", "FLMUSDT", "BALUSDT",
   #          "BTSUSDT", "DGBUSDT", "DEFIUSDT",]
-  symbols: ["BTCUSDT"]
+  symbols: ["BTCUSD"]
 
   bounds:
   {

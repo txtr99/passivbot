@@ -5,15 +5,15 @@
   bandwidth: 0.07
   pitch_adjusting_rate: 0.24
 
-  num_cpus: 4
-  iters: 10
+  num_cpus: 46
+  iters: 1000
 
   maximum_pa_closeness_mean_long: 0.03
   maximum_pa_closeness_mean_shrt: 0.03
 
 
   do_long: true
-  do_shrt: true
+  do_shrt: false
 
   # top 42 volume symbols 2021-10-04 to 2021-10-24
   #symbols: ["BTCUSDT", "ETHUSDT", "SOLUSDT", "1000SHIBUSDT", "AXSUSDT", "FTMUSDT", "XRPUSDT",
@@ -22,7 +22,7 @@
   #          "OMGUSDT", "CELRUSDT", "COTIUSDT", "SFPUSDT", "ETCUSDT", "KEEPUSDT", "ONEUSDT",
   #          "UNIUSDT", "ALGOUSDT", "ICPUSDT", "BCHUSDT", "NEARUSDT", "XLMUSDT", "ALICEUSDT",
   #          "VETUSDT", "TRXUSDT", "SUSHIUSDT", "THETAUSDT", "GALAUSDT", "RUNEUSDT", "AAVEUSDT",]
-  #symbols: ["ADAUSDT", "FTMUSDT"]
+  symbols: ["BTCUSD"]
 
   ranges:
   {

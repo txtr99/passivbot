@@ -3,7 +3,7 @@
   market_type: futures
 
   # exchange from api-keys.json is used
-  user: binance_01
+  user: binance_w
 
   symbol: specify_symbol
   latency_simulation_ms: 1000
