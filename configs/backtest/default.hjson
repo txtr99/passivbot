@@ -5,7 +5,7 @@
   # exchange from api-keys.json is used
   user: binance_w
 
-  symbol: specify_symbol
+  symbol: BTCUSDT
   latency_simulation_ms: 1000
 
   # specify starting balance in terms of margin token (i.e. usdt for usdt-m, coin for inverse coin-m)
